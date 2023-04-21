@@ -16,17 +16,33 @@ public class WorldManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SpawnEnemy();
+        SpawnResource();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (spawned != noToSpawn)
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            Instantiate(resourcePrefabs[Random.Range(0, 6)], new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100)), Quaternion.identity);
+            SpawnEnemy();
+            SpawnResource();
+        }
+    }
+
+    public void SpawnEnemy()
+    {
+        for (int i = 0; i < noToSpawn; i++)
+        {
             enemies[spawned] = Instantiate(enemyPrefab, new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100)), Quaternion.identity);
             spawned += 1;
+        }
+    }
+    public void SpawnResource()
+    {
+        for (int i = 0; i < noToSpawn; i++)
+        {
+            Instantiate(resourcePrefabs[Random.Range(0, 6)], new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100)), Quaternion.identity);
         }
     }
 }

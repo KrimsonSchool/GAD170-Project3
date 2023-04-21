@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
         healthSlider.maxValue = health;
 
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
     {
         healthSlider.value = health;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             gameObject.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
         }

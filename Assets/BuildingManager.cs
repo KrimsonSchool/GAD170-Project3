@@ -9,6 +9,7 @@ public class BuildingManager : MonoBehaviour
     public GameObject[] cams;
     public TMPro.TextMeshProUGUI resourceText;
     public GameObject[] buildings;
+    int selected;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class BuildingManager : MonoBehaviour
     {
         if (building)
         {
-            resourceText.text = "Metal: " + GetComponent<WorldManager>().resource[0] + "\nOil: " + GetComponent<WorldManager>().resource[1] + "\nPopulation: " + GetComponent<WorldManager>().resource[2] + "\n\n\nYou can build:\n* Soldier - 1 Metal, 1 - Oil, 1 - Population\n* Barracks - 2 Metal, 1 - Oil, 3 - Population";
+            resourceText.text = "[TAB] to change building\nMetal: " + GetComponent<WorldManager>().resource[0] + "\nOil: " + GetComponent<WorldManager>().resource[1] + "\nPopulation: " + GetComponent<WorldManager>().resource[2] + "\n\n\nYou can build:\n* Soldier - 1 Metal, 1 - Oil, 1 - Population\n* Barracks - 2 Metal, 1 - Oil, 3 - Population";
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -29,15 +30,38 @@ public class BuildingManager : MonoBehaviour
 
                 if (Physics.Raycast(rayOrigin, out hit))
                 {
-                    if(GetComponent<WorldManager>().resource[0] >= 1 && GetComponent<WorldManager>().resource[1] >= 1 && GetComponent<WorldManager>().resource[2] >= 1)
+                    if(selected == 0)
                     {
-                        Instantiate(buildings[0], new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity);
-                        GetComponent<WorldManager>().resource[0] -= 1;
-                        GetComponent<WorldManager>().resource[1] -= 1;
-                        GetComponent<WorldManager>().resource[2] -= 1;
+                        if (GetComponent<WorldManager>().resource[0] >= 1 && GetComponent<WorldManager>().resource[1] >= 1 && GetComponent<WorldManager>().resource[2] >= 1)
+                        {
+                            Instantiate(buildings[0], new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity);
+                            GetComponent<WorldManager>().resource[0] -= 1;
+                            GetComponent<WorldManager>().resource[1] -= 1;
+                            GetComponent<WorldManager>().resource[2] -= 1;
+                        }
+                    }
+                    if(selected == 1)
+                    {
+                        if (GetComponent<WorldManager>().resource[0] >= 2 && GetComponent<WorldManager>().resource[1] >= 1 && GetComponent<WorldManager>().resource[2] >= 3)
+                        {
+                            Instantiate(buildings[1], new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity);
+                            GetComponent<WorldManager>().resource[0] -= 2;
+                            GetComponent<WorldManager>().resource[1] -= 1;
+                            GetComponent<WorldManager>().resource[2] -= 3;
+                        }
                     }
                 }
 
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            selected += 1;
+
+            if (selected > 1)
+            {
+                selected = 0;
             }
         }
     }

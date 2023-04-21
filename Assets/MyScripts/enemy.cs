@@ -7,6 +7,7 @@ public class enemy : MonoBehaviour
 {
     GameObject player;
     float hitTimer;
+    public GameObject meshes;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +17,22 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) < 10)
+        GetComponent<NavMeshAgent>().destination = player.transform.position;
+        if (Vector3.Distance(player.transform.position, transform.position) < 15)
         {
-            GetComponent<NavMeshAgent>().destination = player.transform.position;
+            GetComponent<NavMeshAgent>().speed = 5;
+            if (!meshes.activeSelf)
+            {
+                meshes.SetActive(true);
+            }
+        }
+        else
+        {
+            GetComponent<NavMeshAgent>().speed = 1;
+            if (meshes.activeSelf)
+            {
+                meshes.SetActive(false);
+            }
         }
 
         if (Vector3.Distance(player.transform.position, transform.position) <= 2)

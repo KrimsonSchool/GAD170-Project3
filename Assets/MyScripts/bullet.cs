@@ -35,7 +35,7 @@ public class bullet : MonoBehaviour
 
         if (selected != null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, selected.transform.position, Time.deltaTime * speed);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(selected.transform.position.x, selected.transform.position.y + 1.75f, selected.transform.position.z), Time.deltaTime * speed);
         }
         else
         {

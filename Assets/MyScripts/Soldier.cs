@@ -42,7 +42,7 @@ public class Soldier : MonoBehaviour
                 }
                 else
                 {
-                    if (timer >= 0.1f)
+                    if (timer >= 0.5f)
                     {
                         Shoot();
                         timer = 0;
@@ -58,6 +58,6 @@ public class Soldier : MonoBehaviour
         GetComponent<Animator>().SetBool("shoot", true);
         Instantiate(bullet, bulletSpawn.transform.position, Quaternion.identity);
 
-        GetComponent<Animator>().SetBool("shoot", false);
+        //GetComponent<Animator>().SetBool("shoot", false);
     }
 }
