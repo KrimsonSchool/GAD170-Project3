@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 8088
+  controlID: 11394
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 8021
+  controlID: 11338
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 8022
+  controlID: 11328
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -712,9 +712,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -6.875946, y: 0.9426416, z: -4.517869}
+    m_Target: {x: -1.916688, y: 4.6998544, z: -6.935789}
     speed: 2
-    m_Value: {x: -6.875946, y: 0.9426416, z: -4.517869}
+    m_Value: {x: -1.916688, y: 4.6998544, z: -6.935789}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -760,9 +760,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.2070333, y: 0.16983058, z: -0.036522347, w: -0.962792}
+    m_Target: {x: -0.06626117, y: 0.00059678336, z: -0.00004239929, w: -0.997806}
     speed: 2
-    m_Value: {x: -0.20703255, y: 0.16982995, z: -0.036522213, w: -0.9627884}
+    m_Value: {x: -0.06626092, y: 0.0005967811, z: -0.00004239913, w: -0.9978022}
   m_Size:
     m_Target: 5.9171042
     speed: 2
@@ -977,8 +977,8 @@ MonoBehaviour:
     y: 822
     width: 1861
     height: 485
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -1033,23 +1033,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts/TankScripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts/TankScripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\1027859\Desktop\GAD170-Project3
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 387a0000
-    m_LastClickedID: 31288
-    m_ExpandedIDs: 00000000387a000000ca9a3bffffff7f
+    m_SelectedIDs: 2e200100
+    m_LastClickedID: 73774
+    m_ExpandedIDs: 00000000387a0000547a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1102,8 +1102,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: ac240000
+    m_LastClickedInstanceID: 9388
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300004c6a0000386a0000
     m_RenameOverlay:
@@ -1228,7 +1228,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 8089
+  controlID: 11395
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1297,7 +1297,7 @@ MonoBehaviour:
     m_CachedPref: -151
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: 9388
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

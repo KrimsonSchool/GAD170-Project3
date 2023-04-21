@@ -57,13 +57,13 @@ public class TankControls
                 }
             case KeyType.Fire:
                 {
-                    if (Input.GetKey(fireButton)) // if we are pressing the fire button
+                    if (Input.GetKey(fireButton) || Input.GetMouseButton(0)) // if we are pressing the fire button
                     {
                         currentValue = 1; // the fire button is pressed
                         fireButtonWasPressed = true;
                         //Debug.Log("Fire Pressed");
                     }
-                    else if (Input.GetKeyUp(fireButton) && fireButtonWasPressed == true)
+                    else if (Input.GetKeyUp(fireButton) && fireButtonWasPressed == true || Input.GetMouseButtonUp(0))
                     {
                         fireButtonWasPressed = false;
                         currentValue = -1;
