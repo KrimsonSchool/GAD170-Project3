@@ -9,6 +9,7 @@ public class Soldier : MonoBehaviour
     public WorldManager worldManager;
     GameObject enemy;
     public GameObject bullet;
+    public GameObject bulletSpawn;
     float timer;
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,9 @@ public class Soldier : MonoBehaviour
 
     public void Shoot()
     {
-        Instantiate(bullet, transform.position, Quaternion.identity);
+        GetComponent<Animator>().SetBool("shoot", true);
+        Instantiate(bullet, bulletSpawn.transform.position, Quaternion.identity);
+
+        GetComponent<Animator>().SetBool("shoot", false);
     }
 }

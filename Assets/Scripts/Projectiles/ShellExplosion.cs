@@ -43,7 +43,7 @@ public class ShellExplosion : MonoBehaviour
                 continue; // if there is no rigidbody continue on to the next element, so skip the rest of this code below.
             }
 
-            targetRigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius); // add a force at the point of impact
+            //targetRigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius); // add a force at the point of impact
 
 
             float damage = CalculateDamage(targetRigidbody.position); // calculate the damage based on the distance

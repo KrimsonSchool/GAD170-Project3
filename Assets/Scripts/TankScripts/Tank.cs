@@ -13,7 +13,7 @@ public class Tank : MonoBehaviour
     public bool enableTankMovement = false;
     public PlayerNumber playerNumber; // the number of our players tank
     public TankControls tankControls = new TankControls(); // creating a new instance of our tank controls
-    public TankHealth tankHealth = new TankHealth(); // creating a new instance of our tank health data class.
+    //public TankHealth tankHealth = new TankHealth(); // creating a new instance of our tank health data class.
     public TankMovement tankMovement = new TankMovement(); // creating a new instance of our tank movement script
     public TankMainGun tankMainGun = new TankMainGun(); // creating a new instance of our tank main gun script
     public GameObject explosionPrefab; // the prefab we will use when we have 0 left to make it go boom!
@@ -35,7 +35,7 @@ public class Tank : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        tankHealth.SetUp(transform); // call the set up function of our tank health script
+        //tankHealth.SetUp(transform); // call the set up function of our tank health script
         tankMovement.SetUp(transform); // calls the set up function of our tank health script
         tankMainGun.SetUp(); // calls the set up function of our tank main gun script
 
@@ -80,7 +80,7 @@ public class Tank : MonoBehaviour
         else
         {
             Debug.Log("Damage applied?" + AmountOfDamage);
-            tankHealth.ApplyHealthChange(AmountOfDamage);
+            //tankHealth.ApplyHealthChange(AmountOfDamage);
         }
     }
 
