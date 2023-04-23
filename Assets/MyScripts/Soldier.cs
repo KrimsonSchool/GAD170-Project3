@@ -11,6 +11,9 @@ public class Soldier : MonoBehaviour
     public GameObject bullet;
     public GameObject bulletSpawn;
     float timer;
+    float lifeTimer;
+    float animTimer;
+    bool shooting;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,7 @@ public class Soldier : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        lifeTimer += Time.deltaTime;
         //print(timer);
         if (Vector3.Distance(player.transform.position, transform.position) > 5)
         {
@@ -51,13 +55,29 @@ public class Soldier : MonoBehaviour
                 }
             }
         }
+
+        if (lifeTimer >= 30)
+        {
+            Destroy(gameObject);
+        }
+
+        if (shooting)
+        {
+            animTimer += Time.deltaTime;
+
+            if(animTimer > 0.5f)
+            {
+                GetComponent<Animator>().SetBool("shoot", false);
+                animTimer = 0;
+                shooting = false;
+            }
+        }
     }
 
     public void Shoot()
     {
+        shooting = true;
         GetComponent<Animator>().SetBool("shoot", true);
         Instantiate(bullet, bulletSpawn.transform.position, Quaternion.identity);
-
-        //GetComponent<Animator>().SetBool("shoot", false);
     }
 }

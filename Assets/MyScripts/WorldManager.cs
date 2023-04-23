@@ -13,6 +13,7 @@ public class WorldManager : MonoBehaviour
     public GameObject[] resourcePrefabs;
     public int noToSpawn;
     public int spawned;
+    float timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,15 @@ public class WorldManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            SpawnEnemy();
+            SpawnResource();
+        }
+
+        timer += Time.deltaTime;
+
+        if (timer >= 90)
+        {
+            noToSpawn += 250;
             SpawnEnemy();
             SpawnResource();
         }
