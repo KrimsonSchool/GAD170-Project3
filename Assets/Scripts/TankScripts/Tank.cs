@@ -79,7 +79,7 @@ public class Tank : MonoBehaviour
         }
         else
         {
-            Debug.Log("Damage applied?" + AmountOfDamage);
+            //Debug.Log("Damage applied?" + AmountOfDamage);
             //tankHealth.ApplyHealthChange(AmountOfDamage);
         }
     }

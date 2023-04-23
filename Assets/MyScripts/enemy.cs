@@ -1,3 +1,4 @@
+using Mono.Cecil;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,6 +54,7 @@ public class enemy : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
+            FindObjectOfType<WorldManager>().resource[Random.Range(0, 3)] += 1;
             Destroy(other.gameObject); 
             Destroy(gameObject);
         }
