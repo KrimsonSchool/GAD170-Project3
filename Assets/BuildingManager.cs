@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
@@ -26,7 +27,12 @@ public class BuildingManager : MonoBehaviour
     {
         if (building)
         {
-            resourceText.text = "[TAB] to change building, Currently seleccted: "+ selectedName[selected] +"\nMetal: " + GetComponent<WorldManager>().resource[0] + "\nOil: " + GetComponent<WorldManager>().resource[1] + "\nPopulation: " + GetComponent<WorldManager>().resource[2] + "\n\n\nYou can build:\n* Soldier - 1 Metal, 1 - Oil, 1 - Population\n* Barracks - 2 Metal, 1 - Oil, 3 - Population";
+            resourceText.text = "";
+            resourceText.text = "[TAB] to change building, Currently seleccted: "+ selectedName[selected] +"\nMetal: " + GetComponent<WorldManager>().resource[0] + "\nOil: " + GetComponent<WorldManager>().resource[1] + "\nPopulation: " + GetComponent<WorldManager>().resource[2] + "\n\n\nCOST:\n";
+            for (int i = 0; i < selectedName.Length; i++)
+            {
+                resourceText.text +="> " + selectedName[i] + "= Metal: " + metalCost[i] + "  Oil: " + oilCost[i] + "  Population: " + populationCost[i]+"\n\n";
+            }
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -37,13 +43,12 @@ public class BuildingManager : MonoBehaviour
                 {
                     if (GetComponent<WorldManager>().resource[0] >= metalCost[selected] && GetComponent<WorldManager>().resource[1] >= oilCost[selected] && GetComponent<WorldManager>().resource[2] >= populationCost[selected])
                     {
-                        Instantiate(buildings[0], new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity);
+                        Instantiate(buildings[selected], new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity);
                         GetComponent<WorldManager>().resource[0] -= metalCost[selected];
                         GetComponent<WorldManager>().resource[1] -= oilCost[selected];
                         GetComponent<WorldManager>().resource[2] -= populationCost[selected];
                     }
                 }
-
             }
         }
 
@@ -51,7 +56,7 @@ public class BuildingManager : MonoBehaviour
         {
             selected += 1;
 
-            if (selected > 1)
+            if (selected > selectedName.Length-1)
             {
                 selected = 0;
             }
