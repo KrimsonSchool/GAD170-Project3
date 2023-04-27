@@ -45,13 +45,16 @@ public class TankControls
                 }
             case KeyType.Rotation:
                 {
-                    if (Input.GetKey(right)) // if we are pressing the right button
+                    if (!Input.GetMouseButton(1))
                     {
-                        currentValue = 1; // we are rotating positively.
-                    }
-                    else if (Input.GetKey(left))// if we are pressing the left button
-                    {
-                        currentValue = -1; // we are rotating negatively
+                        if (Input.GetKey(right)) // if we are pressing the right button
+                        {
+                            currentValue = 1; // we are rotating positively.
+                        }
+                        else if (Input.GetKey(left))// if we are pressing the left button
+                        {
+                            currentValue = -1; // we are rotating negatively
+                        }
                     }
                     break;
                 }

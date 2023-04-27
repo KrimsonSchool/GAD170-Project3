@@ -56,7 +56,7 @@ public class Soldier : MonoBehaviour
             }
         }
 
-        if (lifeTimer >= 30)
+        if (lifeTimer >= 5)
         {
             Destroy(gameObject);
         }

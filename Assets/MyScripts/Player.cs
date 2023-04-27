@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.UI;
 
@@ -17,6 +18,8 @@ public class Player : MonoBehaviour
     float hpTimer;
 
     int hp;
+
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +38,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            gameObject.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
+            gameObject.transform.Rotate(0, Input.GetAxis("Mouse X") * Time.deltaTime * (speed * 100), 0);
         }
         else
         {
@@ -74,7 +77,7 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             Time.timeScale = 0;
-            Application.Quit();
+            SceneManager.LoadScene(0);
         }
     }
 

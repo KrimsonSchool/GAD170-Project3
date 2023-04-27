@@ -22,6 +22,7 @@ public class ResourceGenerator : MonoBehaviour
         if (timer >= secs)
         {
             FindObjectOfType<WorldManager>().resource[resource] += 1;
+            timer = 0;
         }
     }
 }

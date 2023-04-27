@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
+    public GameObject placement;
     public bool building;
     public GameObject[] cams;
     public TMPro.TextMeshProUGUI resourceText;
@@ -27,6 +28,16 @@ public class BuildingManager : MonoBehaviour
     {
         if (building)
         {
+            placement.SetActive(true);
+            //if (buildings[selected].HasComponent<MeshFilter>())
+            //{
+            //    placement.GetComponent<MeshFilter>().mesh = buildings[selected].GetComponent<MeshFilter>().sharedMesh;
+            //}
+            //else if(buildings[selected].GetComponentInChildren<Transform>().gameObject.HasComponent<MeshFilter>())
+            //{
+            //    placement.GetComponent<MeshFilter>().mesh = buildings[selected].GetComponentInChildren<MeshFilter>().sharedMesh;
+            //}
+
             resourceText.text = "";
             resourceText.text = "[TAB] to change building, Currently seleccted: "+ selectedName[selected] +"\nMetal: " + GetComponent<WorldManager>().resource[0] + "\nOil: " + GetComponent<WorldManager>().resource[1] + "\nPopulation: " + GetComponent<WorldManager>().resource[2] + "\n\n\nCOST:\n";
             for (int i = 0; i < selectedName.Length; i++)
@@ -47,9 +58,17 @@ public class BuildingManager : MonoBehaviour
                         GetComponent<WorldManager>().resource[0] -= metalCost[selected];
                         GetComponent<WorldManager>().resource[1] -= oilCost[selected];
                         GetComponent<WorldManager>().resource[2] -= populationCost[selected];
+
+                        metalCost[selected] = Mathf.RoundToInt(metalCost[selected] * 1.2f) + 1;
+                        oilCost[selected] = Mathf.RoundToInt(oilCost[selected] * 1.2f) + 1;
+                        populationCost[selected] = Mathf.RoundToInt(populationCost[selected] * 1.2f) + 1;
                     }
                 }
             }
+        }
+        else
+        {
+            placement.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
