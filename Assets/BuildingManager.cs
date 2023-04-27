@@ -28,7 +28,10 @@ public class BuildingManager : MonoBehaviour
     {
         if (building)
         {
+<<<<<<< HEAD
             placement.SetActive(true);
+=======
+>>>>>>> a9b1fd2ebf31eef5ddef5cb38f9cb5f3f73c1d4d
             //if (buildings[selected].HasComponent<MeshFilter>())
             //{
             //    placement.GetComponent<MeshFilter>().mesh = buildings[selected].GetComponent<MeshFilter>().sharedMesh;
@@ -59,9 +62,15 @@ public class BuildingManager : MonoBehaviour
                         GetComponent<WorldManager>().resource[1] -= oilCost[selected];
                         GetComponent<WorldManager>().resource[2] -= populationCost[selected];
 
+<<<<<<< HEAD
                         metalCost[selected] = Mathf.RoundToInt(metalCost[selected] * 1.2f) + 1;
                         oilCost[selected] = Mathf.RoundToInt(oilCost[selected] * 1.2f) + 1;
                         populationCost[selected] = Mathf.RoundToInt(populationCost[selected] * 1.2f) + 1;
+=======
+                        metalCost[selected] = Mathf.RoundToInt(metalCost[selected] * 1.2f);
+                        oilCost[selected] = Mathf.RoundToInt(oilCost[selected] * 1.2f);
+                        populationCost[selected] = Mathf.RoundToInt(populationCost[selected] * 1.2f);
+>>>>>>> a9b1fd2ebf31eef5ddef5cb38f9cb5f3f73c1d4d
                     }
                 }
             }
