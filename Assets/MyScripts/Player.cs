@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.UI;
 
@@ -74,7 +75,7 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             Time.timeScale = 0;
-            Application.Quit();
+            SceneManager.LoadScene(0);
         }
     }
 
