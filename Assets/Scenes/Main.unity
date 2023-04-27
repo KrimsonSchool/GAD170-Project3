@@ -880,7 +880,11 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
   m_IsActive: 0
+=======
+  m_IsActive: 1
+>>>>>>> a9b1fd2ebf31eef5ddef5cb38f9cb5f3f73c1d4d
 --- !u!65 &1174611046
 BoxCollider:
   m_ObjectHideFlags: 0
