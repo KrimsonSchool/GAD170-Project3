@@ -19,6 +19,8 @@ public class cryptAd : MonoBehaviour
     public void close()
     {
         gameObject.SetActive(false);
+
+        Cursor.visible = false;
     }
 
     public void crypto()

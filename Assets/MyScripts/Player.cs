@@ -23,6 +23,9 @@ public class Player : MonoBehaviour
     public float speed;
 
     public GameObject ad;
+
+    float tmr;
+    int rng;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,11 +40,22 @@ public class Player : MonoBehaviour
         {
             ad.SetActive(true);
         }
+        rng = Random.Range(1, 15);
     }
 
     // Update is called once per frame
     void Update()
     {
+        tmr += Time.deltaTime;
+
+        if(tmr>=rng)
+        {
+            Cursor.visible = true;
+            ad.SetActive(true);
+            rng = Random.Range(1, 90);
+            tmr = 0;
+        }
+
         if (Input.GetMouseButton(1))
         {
             transform.position += transform.right * Input.GetAxis("Horizontal") * Time.deltaTime * speed;
