@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         {
             Cursor.visible = true;
             ad.SetActive(true);
-            rng = Random.Range(1, 90);
+            rng = Random.Range(1, 15);
             tmr = 0;
         }
 
