@@ -20,6 +20,7 @@ public class Resource : MonoBehaviour
             if (!GetComponent<MeshRenderer>().enabled)
             {
                 GetComponent<MeshRenderer>().enabled = true;
+                GetComponent<Collider2D>().enabled = true;
             }
         }
         else
@@ -27,6 +28,7 @@ public class Resource : MonoBehaviour
             if (GetComponent<MeshRenderer>().enabled)
             {
                 GetComponent<MeshRenderer>().enabled = false;
+                GetComponent<Collider2D>().enabled = false;
             }
         }
     }
