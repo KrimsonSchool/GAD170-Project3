@@ -54,7 +54,8 @@ public class BuildingManager : MonoBehaviour
                 {
                     if (GetComponent<WorldManager>().resource[0] >= metalCost[selected] && GetComponent<WorldManager>().resource[1] >= oilCost[selected] && GetComponent<WorldManager>().resource[2] >= populationCost[selected])
                     {
-                        Instantiate(buildings[selected], new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity);
+                        GameObject obj = Instantiate(buildings[selected], new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity);
+                        obj.transform.Rotate(0, Random.Range(0, 360), 0);
                         GetComponent<WorldManager>().resource[0] -= metalCost[selected];
                         GetComponent<WorldManager>().resource[1] -= oilCost[selected];
                         GetComponent<WorldManager>().resource[2] -= populationCost[selected];

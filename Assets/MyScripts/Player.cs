@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.UI;
+using UnityEditor.Advertisements;
 
 public class Player : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class Player : MonoBehaviour
     int hp;
 
     public float speed;
+
+    public GameObject ad;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +32,26 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
 
         hp = health;
+
+        if(Random.Range(0, 100) == 1)
+        {
+            ad.SetActive(true);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButton(1))
+        {
+            transform.position += transform.right * Input.GetAxis("Horizontal") * Time.deltaTime * speed;
+        }
+        else
+        {
+            transform.Rotate(0, Input.GetAxis("Horizontal") * Time.deltaTime * speed * 100, 0);
+        }
+        transform.position += transform.forward * Input.GetAxis("Vertical") * Time.deltaTime * speed;
+
         healthSlider.value = health;
 
         if (Input.GetMouseButton(1))
@@ -76,7 +94,7 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            Time.timeScale = 0;
+            Time.timeScale += 0.1f;
             SceneManager.LoadScene(0);
         }
     }
