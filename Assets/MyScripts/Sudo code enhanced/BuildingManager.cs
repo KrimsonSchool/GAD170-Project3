@@ -81,9 +81,6 @@ public class BuildingManager : MonoBehaviour
                         metalCost[selected] = Mathf.RoundToInt(metalCost[selected] * 1.2f) + 1;
                         oilCost[selected] = Mathf.RoundToInt(oilCost[selected] * 1.2f) + 1;
                         populationCost[selected] = Mathf.RoundToInt(populationCost[selected] * 1.2f) + 1;
-                        metalCost[selected] = Mathf.RoundToInt(metalCost[selected] * 1.2f);
-                        oilCost[selected] = Mathf.RoundToInt(oilCost[selected] * 1.2f);
-                        populationCost[selected] = Mathf.RoundToInt(populationCost[selected] * 1.2f);
                     }
                 }
             }
